@@ -1,0 +1,242 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url('img/SuperEasy-ZVAr3.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'playwrite';
+  src: url('img/PlaywriteGBS-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image:
+          url("img/bg.gif"), 
+          url("img/sky-vector-01.jpg");
+    background-size: auto, cover;
+    cursor: url('img/bolt.cur') 16 16, auto;
+    
+}
+
+.container {
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    background: transparent !important;
+    backdrop-filter: blur(10px) !important;
+    margin: auto;
+    border-radius: 20px;
+    padding: 35px;
+    padding-bottom: 35px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    font-family: 'playwrite';
+}
+
+h1 {
+    color: #478cc3;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+h2{
+  color: #478cc3;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    margin-left: 20px;
+    align-self: center;
+}
+
+
+#surprise {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+.scratch-container {
+  border-radius: 25px;
+  position: relative;
+  width: 300px; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+  overflow: hidden;
+  display: flex !important;
+}
+
+
+.hidden-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute; /* Added to ensure it's behind the canvas */
+  top: 0;
+  left: 0;
+}
+
+.scratch-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* game button */
+
+.light-button button.bt {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 20px;
+  outline: none;
+  background: none;
+  border: none;
+
+  display: flex;
+  align-items: center;
+}
+
+.light-button button.bt .button-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  background-color: #0a0a0a;
+  border-radius: 5px;
+  color: #0f0f0f;
+  font-weight: 700;
+  transition: 300ms;
+  outline: #0f0f0f 2px solid;
+  outline-offset: 20;
+}
+
+.light-button button.bt .button-holder svg {
+  height: 50px;
+  fill: #0f0f0f;
+  transition: 300ms;
+}
+
+.light-button button.bt .light-holder {
+  position: absolute;
+  height: 200px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light-button button.bt .light-holder .dot {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #0a0a0a;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.light-button button.bt .light-holder .light {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+  background: transparent;
+}
+
+.light-button button.bt:hover .button-holder svg {
+  fill: #478cc3;
+}
+
+.light-button button.bt:hover .button-holder {
+  color: #478cc3;
+  outline: #478cc3 2px solid;
+  outline-offset: 2px;
+}
+
+.light-button button.bt:hover .light-holder .light {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    #478cc3 0%,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.scra{
+  display: flex;
+  margin-left: 50px;
+}
+
+
+.surpb {
+  --glow-color: #bee6f0;
+  --glow-spread-color: #478cc3;
+  --enhanced-glow-color: #bee6f0;
+  --btn-color: #478cc3;
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+ }
+ 
+ .surpb::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: .7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+ }
+ 
+ .surpb:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 2em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+ }
+ 
+ .surpb:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+         0 0 2.5em 2em var(--glow-spread-color),
+         inset 0 0 .5em .25em var(--glow-color);
+ }
