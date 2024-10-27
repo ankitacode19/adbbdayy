@@ -12,6 +12,8 @@ body {
   background-image:
         url("img/bg.gif"), 
         url("img/sky-vector-01.jpg");
+        
+    cursor: url('img/bolt.cur') 16 16, auto;
 }
 #mazeContainer {
   transition-property: opacity;
@@ -33,7 +35,6 @@ select {
   transition-property: background-color opacity;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  cursor: pointer;
   background-color: rgba(0, 0, 0, 0.3);
   height: 45px;
   width: 150px;
